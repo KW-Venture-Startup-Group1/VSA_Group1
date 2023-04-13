@@ -75,7 +75,7 @@ while True:
         yt.streams.filter(only_audio=True).first().download('C:/Users/Ku/Downloads')
       break
 
-    elif (mod == "영상"):
+    elif(mod == "영상"):
       for i in dlSet:
         yt = YouTube(videoUrls[i - 1])
         yt.streams.filter().get_highest_resolution().download('C:/Users/Ku/Downloads')
