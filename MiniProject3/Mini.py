@@ -29,8 +29,8 @@ while True:
   options = webdriver.ChromeOptions()
 
   options.add_argument("headless")
-
-  dr = webdriver.Chrome(chrome_options=options)
+# chrome_options=options
+  dr = webdriver.Chrome()
         
   url = 'https://www.youtube.com/results?search_query=%s'%query
 
@@ -52,7 +52,8 @@ while True:
   for video in videos:
     try:
       youtubeUrl = "https://youtube.com" + video['href']
-      print("%d.\nYoutube Title: %s"%(count, video['title']))
+      youtubeTime = " ".join(video['aria-label'].split()[-4: -2]) if (video['aria-label'].split()[-4: -3] != "전") else video['aria-label'].split()[-3: -2]
+      print("%d.\nYoutube Title: %s %s"%(count, video['title'], youtubeTime))
       print("Youtube Link: %s\n"%youtubeUrl)
       count += 1
       videoUrls.append(youtubeUrl)
@@ -60,11 +61,31 @@ while True:
     except:
       continue
   
-  dlSet = list(map(int, input("어느 음원을 다운하시겠습니까? 숫자들만 입력해 주세요.\n :").split()))
+  dlSet = list(map(int, input("어느 파일을 다운하시겠습니까? 숫자들만 입력해 주세요. (종료: q)\n :").split()))
+  if (dlSet == "q"):
+    continue
 
-  for i in dlSet:
-    yt = YouTube(videoUrls[i - 1])
-    yt.streams.filter(only_audio=True).first().download('C:/Users/Ku/Downloads')
+  while True:   
+    mod = input("어느 형식으로 저장하시겠습니까? (mp4음원, mp4영상) 음원/ 영상으로 입력해 주십시오.\n(취소 = q)\n")
 
+    if(mod == "음원"):
+      for i in dlSet:
+        yt = YouTube(videoUrls[i - 1])
+        yt.streams.filter(only_audio=True).first().download('C:/Users/Ku/Downloads')
+      break
+
+    elif (mod == "영상"):
+      for i in dlSet:
+        yt = YouTube(videoUrls[i - 1])
+        yt.streams.filter().get_highest_resolution().download('C:/Users/Ku/Downloads')
+      break
+
+    elif (mod == "q"):
+      break
+
+    else:
+      print("잘못된 입력입니다.")
+      continue
+    
 	# 크롬 드라이버 종료
   dr.close()
