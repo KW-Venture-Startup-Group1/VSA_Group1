@@ -52,9 +52,9 @@ while True:
   for video in videos:
     try:
       youtubeUrl = "https://youtube.com" + video['href']
-      youtubeTime = video['aria-label'].split()[-4: -2]
-      print("%d.\nYoutube Title: %s"%(count, video['title']))
-      print("Youtube Length: %s"%(10))
+
+      youtubeTime = " ".join(video['aria-label'].split()[-4: -2]) if (video['aria-label'].split()[-4: -3] != "전") else video['aria-label'].split()[-3: -2]
+      print("%d.\nYoutube Title: %s %s"%(count, video['title'], youtubeTime))
       print("Youtube Link: %s\n"%youtubeUrl)
       count += 1
       videoUrls.append(youtubeUrl)
@@ -78,7 +78,7 @@ while True:
     elif (mod == "영상"):
       for i in dlSet:
         yt = YouTube(videoUrls[i - 1])
-        yt.streams.filter().first().download('C:/Users/Ku/Downloads')
+        yt.streams.filter().get_highest_resolution().download('C:/Users/Ku/Downloads')
       break
 
     elif (mod == "q"):
