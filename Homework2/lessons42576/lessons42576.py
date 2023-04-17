@@ -12,3 +12,4 @@ def solution(participant, completion):
                 answer=par[i]
                 break
     return answer
+
