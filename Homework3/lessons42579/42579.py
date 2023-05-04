@@ -10,7 +10,7 @@ def solution(genres, plays):
         
     # 노래 재생 시간을 합산한 값이 높은 장르부터 낮은 장르까지 순서대로 정렬
     # map: 리스트의 요소를 지정된 함수로 처리해주는 함수
-    # songs[x] 에서 x 는 노래 제목임
+    # songs[x] 에서 x 는 노래 고유 번호임
     # map(lambda y: y[0],songs[x]) : songs[x] 딕셔너리를 리스트로 변환하고, y[0] 즉, 해당리스트의 첫 번째 값을 추출(첫 번째 값은 노래 재생 횟수를 의미)
     # sum으로 각 장르별 노래 재생 횟수가 제일 높은(reverse=True) 장르부터 정렬
     genre_sorted =sorted(list(songs.keys()), key= lambda x:sum(map(lambda y: y[0],songs[x])), reverse = True)
