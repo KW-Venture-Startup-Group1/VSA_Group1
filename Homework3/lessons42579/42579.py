@@ -22,3 +22,16 @@ def solution(genres, plays):
         # 각 장르별로 최대 2개까지(min) 출력
         answer += i[:min(len(i),2)]
     return answer
+
+
+# 더 배울 수 있는 것들
+# enumerate() 함수
+# enumerate(): 인덱스(index)와 원소(element)에 동시 접근하면서 루프를 돌릴 수 있게 해줌
+# enumerate() 함수는 기본적으로 인덱스와 원소로 이루어진 튜플(tuple)을 만들어줌
+# (예)
+#   for index, letter in enumerate(['A', 'B', 'C'])
+#       print(index, letter)
+# (실행결과)
+#   0 A
+#   1 B
+#   2 C
