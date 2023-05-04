@@ -8,3 +8,7 @@ def solution(phone_book):
         if str2.startswith(str1):
             return False
     return True
+
+# 더 공부할 수 있는 내용들 - filter (https://www.daleseo.com/python-filter/)
+# filter() 함수: filter(조건 함수, 순회 가능한 데이터)
+# filter() 함수는 두번째 인자로 넘어온 데이터 중에서 첫번째 인자로 넘어온 조건 함수를 만족하는 데이터만을 반환
