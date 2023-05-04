@@ -1,3 +1,5 @@
+# 의상: https://school.programmers.co.kr/learn/courses/30/lessons/42578
+
 def solution(phone_book):
     phone = sorted(phone_book)
     print(phone)
