@@ -1,0 +1,10 @@
+# VSA_Group7
+
+- Homework 1
+  - Python Basic
+
+- Homework 2
+  - Hash
+
+- Homework 3
+  - Hash
