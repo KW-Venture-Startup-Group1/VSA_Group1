@@ -4,13 +4,15 @@
 #'('와 ')'의 개수가 같을 것
 # Case 1. list
 def solution(s):
-    answer = False
-    if s=="":
-        answer = True
-    elif s[0]=='(' and s[-1]==')': 
-            if s.count('(')==s.count(')'):
-                answer = True
-    return answer
+    num = 0
+    for e in s:
+        if e=='(':
+            num+=1
+        else:
+            num-=1
+        if num<0:
+            return False
+    return num==0
   
 # Case 2. stack
 def solution(s):
