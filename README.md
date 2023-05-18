@@ -14,3 +14,6 @@
 
 - Homework 5
   - Stack & Queue
+
+- Homework 6
+  - Heap
