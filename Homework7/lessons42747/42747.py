@@ -10,4 +10,4 @@ def solution(citations):
     return len(citations)
 
 
-print(solution([0, 2, 4, 6, 8]))
+print(solution([3, 0, 6, 1, 5]))
