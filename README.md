@@ -23,3 +23,6 @@
 
 - Homework 8
   - Exhaustive Search
+
+- Homework 9
+  - Exhaustive Search
