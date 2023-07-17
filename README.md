@@ -17,3 +17,9 @@
 
 - Homework 6
   - Heap
+
+- Homework 7
+  - Sort
+
+- Homework 8
+  - Exhaustive Search
