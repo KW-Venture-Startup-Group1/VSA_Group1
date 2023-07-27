@@ -26,3 +26,6 @@
 
 - Homework 9
   - Exhaustive Search
+
+- Homework 10
+  - Greedy
