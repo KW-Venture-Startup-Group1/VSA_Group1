@@ -1,0 +1,46 @@
+div .container {
+  position: relative;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #86B1E5;
+
+  header {
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0;
+      padding-top: 2%;
+    }
+  }
+
+  .example {
+    margin-top: 20px;
+
+    img {
+      width: 200px;
+      height: 150px;
+      margin: 0 10px 0;
+      border-radius: 10px;
+    }
+  }
+
+  .preview {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .previewImg {
+      border-radius: 20px;
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    width: 100px;
+    height: 35px;
+  }
+}
